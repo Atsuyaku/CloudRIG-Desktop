@@ -19,7 +19,7 @@ import Vue from 'vue' import Vuetify from 'vuetify/lib'
         </v-btn>
       </router-link>
       <v-list>
-        <router-link tag="span" to="/MachineCreation"
+        <router-link tag="span" to="/FormParent/MachineCreation"
           ><v-btn icon style="margin-top: 30px; margin-left: 10px;"
             ><v-avatar size="40px">
               <v-icon color="white" size="30">
@@ -30,7 +30,7 @@ import Vue from 'vue' import Vuetify from 'vuetify/lib'
         >
         <br />
 
-        <router-link tag="span" to="/CSP"
+        <router-link tag="span" to="/FormParent/CSP"
           ><v-btn icon style="margin-top: 20px; margin-left: 10px;"
             ><v-avatar size="40px">
               <v-icon color="white" size="30">
@@ -41,7 +41,7 @@ import Vue from 'vue' import Vuetify from 'vuetify/lib'
         >
         <br />
 
-        <router-link tag="span" to="/Credentials"
+        <router-link tag="span" to="/FormParent/Credentials"
           ><v-btn icon style="margin-top: 20px; margin-left: 10px;"
             ><v-avatar size="40px">
               <v-icon color="white" size="30">

@@ -13,35 +13,40 @@
       >
         Create a machine
       </div>
-      <div>
+      <form id="machineForm" name="machineForm">
         <v-row>
           <v-col md="3">
             <v-text-field
               label="Name"
-              v-model="name"
               :rules="nameRules"
               :counter="20"
               required
               style="width: 100%;"
+              id="MName"
+              v-model="MName"
+              v-on:change="save('MName')"
+
             ></v-text-field>
           </v-col>
           <v-col md="3">
             <v-select
               label="Region"
-              v-model="select"
               :items="regions"
               :rules="[v => !!v || 'Item is required']"
               required
               style="width: 100%;"
-            ></v-select>
+              id="MRegion"
+              v-model="MRegion">
+              <!--@input="saveToStorage(MRegion)"-->
+            </v-select>
           </v-col>
         </v-row>
         <v-row>
           <v-col md="6">
-            <v-textarea style="width: 100%;" label="Description"></v-textarea>
+            <v-textarea style="width: 100%;" label="Description" id="MDescription" v-model="MDescription" v-on:change="save('MDescription')" ></v-textarea>
           </v-col>
         </v-row>
-        <router-link tag="button" to="/CSP">
+        <router-link tag="button" to="/FormParent/CSP">
           <v-btn
             style="margin-right: 20px;"
             @click="submit"
@@ -52,36 +57,50 @@
         <router-link tag="button" to="/">
           <v-btn>Cancel</v-btn>
         </router-link>
-      </div>
+      </form>
     </v-app>
   </div>
 </template>
 
 <script>
-export default {
-  name: "MachineCreationContent",
+  import {Myfunctions} from "./FormParentContent";
 
-  data() {
+  export default {
+  name: "MachineCreationContent",
+    data() {
+
     return {
+      MName:  sessionStorage?.getItem('MName'),
+      MRegion:  sessionStorage?.getItem('region'),
+      MDescription:  sessionStorage?.getItem('MDescription'),
       valid: false,
-      name: "Machine001",
       nameRules: [
         v => !!v || "Name is required",
-        v => (v && v.length <= 20) || "Name must be less than 10 characters"
+        v => (v && v.length <= 20) || "Name must be less than 20 characters"
       ],
       select: null,
-      regions: ["Europe East", "Europe West", "North America", "South America"]
+      regions: [
+        { value: 1, text:"Europe East"},
+        { value: 2, text:"Europe West"},
+        { value: 3, text:"North America"},
+        { value: 4, text:"South America"}]
     };
   },
   methods: {
+    save: function(id1){
+      Myfunctions.saveToStorage(id1);
+    },
     submit() {
       this.$refs.form.validate();
     },
     clear() {
       this.$refs.form.reset();
-    }
+    },
+
   }
 };
+
 </script>
+
 
 <style scoped></style>

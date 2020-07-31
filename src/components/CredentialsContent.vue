@@ -23,6 +23,9 @@
                         placeholder="AKIAJSIE27KKMHXI3BJQ"
                         label="Access Key Id"
                         required
+                        id="AccessKey"
+                        v-model="AccessKey"
+                        v-on:change="save('AccessKey')"
                       />
                     </v-row>
                     <v-row>
@@ -67,13 +70,13 @@
                   <p style="text-align: right;">
                     <router-link
                       tag="span"
-                      to="/CSP"
+                      to="/FormParent/CSP"
                       style="padding-right: 12px;"
                     >
                       <v-btn dark>Previous</v-btn>
                     </router-link>
 
-                    <router-link tag="span" to="/MachineSumUp">
+                    <router-link tag="span" to="/FormParent/MachineSumUp">
                       <v-btn>Next</v-btn>
                     </router-link>
                   </p>
@@ -157,6 +160,7 @@
 </template>
 
 <script>
+  import {Myfunctions} from "./FormParentContent";
 export default {
   name: "CredentialsContent",
 
@@ -168,9 +172,15 @@ export default {
 */
   data() {
     return {
+      AccessKey:  sessionStorage?.getItem('AccessKey'),
       profile: ["profile 1", "profile 2", "profile 3", "profile 4"],
       checkbox: true
     };
+  },
+  methods:{
+    save: function(id1){
+      Myfunctions.saveToStorage(id1);
+    },
   }
   /*
   contentHasChanged() {

@@ -17,7 +17,7 @@
       <div>
         <v-row>
           <v-col>
-            <router-link tag="span" to="/MachineCreation">
+            <router-link tag="span" to="/FormParent/MachineCreation">
               <v-btn
                 dark
                 depressed

@@ -19,7 +19,12 @@
                   <v-container>
                     <v-row>
                       <p style="text-decoration: underline;">Machine Name</p>
-                      <p style="padding-left: 10px;">Machine001</p>
+                      <v-text-field
+                              style="width: 100%;"
+                              id="MName"
+                              v-model="MName"
+                              disabled
+                      ></v-text-field>
                     </v-row>
                     <v-row>
                       <p style="text-decoration: underline;">Region</p>
@@ -57,13 +62,13 @@
                   <p style="text-align: right;">
                     <router-link
                       tag="span"
-                      to="/Credentials"
+                      to="/FormParent/Credentials"
                       style="padding-right: 12px;"
                     >
                       <v-btn dark>Previous</v-btn>
                     </router-link>
 
-                    <router-link tag="span" to="/LoadingScreen">
+                    <router-link tag="span" to="/FormParent/LoadingScreen">
                       <v-btn>Next</v-btn>
                     </router-link>
                   </p>
@@ -79,8 +84,15 @@
 
 <script>
 export default {
-  name: "MachineSumUpContent"
+  name: "MachineSumUpContent",
+
+  data(){
+    return{
+      MName:  sessionStorage?.getItem('MName'),
+    }
+  }
 };
+
 </script>
 
 <style scoped></style>

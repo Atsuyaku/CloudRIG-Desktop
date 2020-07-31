@@ -6,6 +6,7 @@ import CSP from "../views/CSP";
 import Credentials from "../views/Credentials";
 import MachineSumUp from "../views/MachineSumUp";
 import LoadingScreen from "../views/LoadingScreen";
+import FormParent from "../views/FormParent";
 
 Vue.use(VueRouter);
 
@@ -16,38 +17,36 @@ const routes = [
     component: Home,
   },
   {
-    path: "/MachineCreation",
-    name: "MachineCreation",
-    component: MachineCreation,
-  },
-  {
-    path: "/CSP",
-    name: "CSP",
-    component: CSP,
-  },
-  {
-    path: "/Credentials",
-    name: "Credentials",
-    component: Credentials,
-  },
-  {
-    path: "/MachineSumUp",
-    name: "MachineSumUp",
-    component: MachineSumUp,
-  },
-  {
-    path: "/LoadingScreen",
-    name: "LoadingScreen",
-    component: LoadingScreen,
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/FormParent",
+    name: "FormParent",
+    component: FormParent,
+    children:[
+      {
+        path: "/FormParent/MachineCreation",
+        name: "MachineCreation",
+        component: MachineCreation,
+      },
+      {
+        path: "/FormParent/CSP",
+        name: "CSP",
+        component: CSP,
+      },
+      {
+        path: "/FormParent/Credentials",
+        name: "Credentials",
+        component: Credentials,
+      },
+      {
+        path: "/FormParent/MachineSumUp",
+        name: "MachineSumUp",
+        component: MachineSumUp,
+      },
+      {
+        path: "/FormParent/LoadingScreen",
+        name: "LoadingScreen",
+        component: LoadingScreen,
+      },
+    ]
   },
 ];
 

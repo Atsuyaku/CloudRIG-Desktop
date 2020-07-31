@@ -15,7 +15,7 @@
       </div>
       <v-row no-gutters>
         <v-col md="1">
-          <router-link tag="span" to="/Credentials">
+          <router-link tag="span" to="/FormParent/Credentials">
             <v-btn
               dark
               depressed
@@ -35,7 +35,7 @@
         </v-col>
         <v-col md="2" lg="1"> </v-col>
         <v-col md="1">
-          <router-link to="/Credentials">
+          <router-link to="/FormParent/Credentials">
             <v-btn
               dark
               depressed
@@ -59,7 +59,7 @@
         </v-col>
         <v-col cols="2" lg="1"></v-col>
         <v-col md="1">
-          <router-link tag="span" to="/Credentials">
+          <router-link tag="span" to="/FormParent/Credentials">
             <v-btn
               dark
               depressed
@@ -83,7 +83,7 @@
         </v-col>
         <v-col md="2" lg="1"></v-col>
         <v-col md="1">
-          <router-link tag="span" to="/Credentials">
+          <router-link tag="span" to="/FormParent/Credentials">
             <v-btn
               dark
               depressed
@@ -104,7 +104,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <router-link tag="span" to="/MachineCreation">
+        <router-link tag="span" to="/FormParent/MachineCreation">
           <v-btn dark style="margin-left: 20px;">Previous</v-btn>
         </router-link>
       </v-row>
