@@ -20,10 +20,10 @@
                     <v-row>
                       <p style="text-decoration: underline;">Machine Name</p>
                       <v-text-field
-                              style="width: 100%;"
-                              id="MName"
-                              v-model="MName"
-                              disabled
+                        style="width: 100%;"
+                        id="MName"
+                        v-model="MName"
+                        disabled
                       ></v-text-field>
                     </v-row>
                     <v-row>
@@ -86,13 +86,12 @@
 export default {
   name: "MachineSumUpContent",
 
-  data(){
-    return{
-      MName:  sessionStorage?.getItem('MName'),
-    }
+  data() {
+    return {
+      MName: sessionStorage?.getItem("MName")
+    };
   }
 };
-
 </script>
 
 <style scoped></style>

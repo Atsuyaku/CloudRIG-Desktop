@@ -160,7 +160,7 @@
 </template>
 
 <script>
-  import {Myfunctions} from "./FormParentContent";
+import { Myfunctions } from "./FormParentContent";
 export default {
   name: "CredentialsContent",
 
@@ -172,15 +172,15 @@ export default {
 */
   data() {
     return {
-      AccessKey:  sessionStorage?.getItem('AccessKey'),
+      AccessKey: sessionStorage?.getItem("AccessKey"),
       profile: ["profile 1", "profile 2", "profile 3", "profile 4"],
       checkbox: true
     };
   },
-  methods:{
-    save: function(id1){
+  methods: {
+    save: function(id1) {
       Myfunctions.saveToStorage(id1);
-    },
+    }
   }
   /*
   contentHasChanged() {

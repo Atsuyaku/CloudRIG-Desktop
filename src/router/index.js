@@ -14,46 +14,46 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/FormParent",
     name: "FormParent",
     component: FormParent,
-    children:[
+    children: [
       {
         path: "/FormParent/MachineCreation",
         name: "MachineCreation",
-        component: MachineCreation,
+        component: MachineCreation
       },
       {
         path: "/FormParent/CSP",
         name: "CSP",
-        component: CSP,
+        component: CSP
       },
       {
         path: "/FormParent/Credentials",
         name: "Credentials",
-        component: Credentials,
+        component: Credentials
       },
       {
         path: "/FormParent/MachineSumUp",
         name: "MachineSumUp",
-        component: MachineSumUp,
+        component: MachineSumUp
       },
       {
         path: "/FormParent/LoadingScreen",
         name: "LoadingScreen",
-        component: LoadingScreen,
-      },
+        component: LoadingScreen
+      }
     ]
-  },
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

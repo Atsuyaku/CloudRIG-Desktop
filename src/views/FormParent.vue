@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="FormParentContent"><FormParentContent/></div>
-    <router-view/>
+    <div class="FormParentContent"><FormParentContent /></div>
+    <router-view />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import FormParentContent from "../components/FormParentContent";
 
 export default {
   name: "FormParent",
-  components: {FormParentContent}
+  components: { FormParentContent }
 };
 </script>
 

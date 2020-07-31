@@ -4,10 +4,10 @@ import Vuetify from "vuetify/lib";
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    icons: {
-        iconfont: 'faSvg'
-    },
-    theme: {
-        dark: true,
-    },
-})
+  icons: {
+    iconfont: "faSvg"
+  },
+  theme: {
+    dark: true
+  }
+});

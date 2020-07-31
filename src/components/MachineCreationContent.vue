@@ -25,7 +25,6 @@
               id="MName"
               v-model="MName"
               v-on:change="save('MName')"
-
             ></v-text-field>
           </v-col>
           <v-col md="3">
@@ -36,14 +35,21 @@
               required
               style="width: 100%;"
               id="MRegion"
-              v-model="MRegion">
+              v-model="MRegion"
+            >
               <!--@input="saveToStorage(MRegion)"-->
             </v-select>
           </v-col>
         </v-row>
         <v-row>
           <v-col md="6">
-            <v-textarea style="width: 100%;" label="Description" id="MDescription" v-model="MDescription" v-on:change="save('MDescription')" ></v-textarea>
+            <v-textarea
+              style="width: 100%;"
+              label="Description"
+              id="MDescription"
+              v-model="MDescription"
+              v-on:change="save('MDescription')"
+            ></v-textarea>
           </v-col>
         </v-row>
         <router-link tag="button" to="/FormParent/CSP">
@@ -63,16 +69,15 @@
 </template>
 
 <script>
-  import {Myfunctions} from "./FormParentContent";
+import { Myfunctions } from "./FormParentContent";
 
-  export default {
+export default {
   name: "MachineCreationContent",
-    data() {
-
+  data() {
     return {
-      MName:  sessionStorage?.getItem('MName'),
-      MRegion:  sessionStorage?.getItem('region'),
-      MDescription:  sessionStorage?.getItem('MDescription'),
+      MName: sessionStorage?.getItem("MName"),
+      MRegion: sessionStorage?.getItem("region"),
+      MDescription: sessionStorage?.getItem("MDescription"),
       valid: false,
       nameRules: [
         v => !!v || "Name is required",
@@ -80,14 +85,15 @@
       ],
       select: null,
       regions: [
-        { value: 1, text:"Europe East"},
-        { value: 2, text:"Europe West"},
-        { value: 3, text:"North America"},
-        { value: 4, text:"South America"}]
+        { value: 1, text: "Europe East" },
+        { value: 2, text: "Europe West" },
+        { value: 3, text: "North America" },
+        { value: 4, text: "South America" }
+      ]
     };
   },
   methods: {
-    save: function(id1){
+    save: function(id1) {
       Myfunctions.saveToStorage(id1);
     },
     submit() {
@@ -95,12 +101,9 @@
     },
     clear() {
       this.$refs.form.reset();
-    },
-
+    }
   }
 };
-
 </script>
-
 
 <style scoped></style>
