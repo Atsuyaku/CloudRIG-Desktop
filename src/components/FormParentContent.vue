@@ -7,9 +7,9 @@ export default {
   name: "FormParentContent"
 };
 export const Myfunctions = {
-  saveToStorage: function(id) {
-    sessionStorage.setItem(id, document.getElementById(id).value);
-  }
+  saveToStorage: function(id,name) {
+    sessionStorage.setItem(name,id);
+  },
 };
 </script>
 

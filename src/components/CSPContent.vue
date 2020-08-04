@@ -26,6 +26,7 @@
               "
               height="170px"
               width="170px"
+              v-on:click="save('Amazon Web Services','CSP');"
             >
               <v-icon color="white" size="100">
                 fab fa-aws
@@ -48,6 +49,7 @@
               width="170px"
               class="white"
               disabled
+              v-on:click="save('Microsoft Azure','CSP');"
             >
               <v-img
                 :src="require('../assets/icons-azur.svg')"
@@ -72,6 +74,7 @@
               width="170px"
               class="white"
               disabled
+              v-on:click="save('Google Cloud Platform','CSP');"
             >
               <v-img
                 :src="require('../assets/icons-google-cloud-platform.svg')"
@@ -96,6 +99,7 @@
               width="170px"
               class="white"
               disabled
+              v-on:click="save('Not available yet','CSP');"
             >
               <p>Not available yet</p>
               <v-icon color="white" size="150"></v-icon>
@@ -118,9 +122,16 @@
 </template>
 
 <script>
+  import { Myfunctions } from "./FormParentContent";
 export default {
-  name: "CSPContent"
+  name: "CSPContent",
+  methods: {
+    save: function (id, name) {
+      Myfunctions.saveToStorage(id, name);
+    },
+  }
 };
+
 </script>
 
 <style scoped></style>

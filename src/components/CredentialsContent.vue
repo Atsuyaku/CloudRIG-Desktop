@@ -23,9 +23,9 @@
                         placeholder="AKIAJSIE27KKMHXI3BJQ"
                         label="Access Key Id"
                         required
-                        id="AccessKey"
-                        v-model="AccessKey"
-                        v-on:change="save('AccessKey')"
+                        id="MAccessKey"
+                        v-model="MAccessKey"
+                        v-on:change="save(MAccessKey,'AccessKey')"
                       />
                     </v-row>
                     <v-row>
@@ -164,35 +164,19 @@ import { Myfunctions } from "./FormParentContent";
 export default {
   name: "CredentialsContent",
 
-  /*
-  props: {
-    onChange,
-    initvalues
-  },
-*/
   data() {
     return {
-      AccessKey: sessionStorage?.getItem("AccessKey"),
+      MAccessKey: sessionStorage?.getItem("AccessKey"),
       profile: ["profile 1", "profile 2", "profile 3", "profile 4"],
       checkbox: true
     };
   },
   methods: {
-    save: function(id1) {
-      Myfunctions.saveToStorage(id1);
-    }
+    save: function(id,name) {
+      Myfunctions.saveToStorage(id,name);
+    },
   }
-  /*
-  contentHasChanged() {
-    // Récupère les donnees de chaque champs
-    const accessKey = "xxx";
-    if (this.onChange) {
-      this.onChange({
-        'accessKey': accessKey
-      })
-    }
-  }
-*/
+
 };
 </script>
 

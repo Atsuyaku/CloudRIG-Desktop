@@ -23,12 +23,18 @@
                         style="width: 100%;"
                         id="MName"
                         v-model="MName"
-                        disabled
+                        readonly
+                        outlined
+
                       ></v-text-field>
                     </v-row>
                     <v-row>
                       <p style="text-decoration: underline;">Region</p>
-                      <p style="padding-left: 10px;">EUROPE WEST</p>
+                      <v-text-field style="width: 100%;"
+                        id="MRegion"
+                        v-model="MRegion"
+                        readonly
+                        outlined></v-text-field>
                     </v-row>
                   </v-container>
                 </v-col>
@@ -47,11 +53,19 @@
                   <v-container>
                     <v-row>
                       <p style="text-decoration: underline;">Cloud Provider</p>
-                      <p style="padding-left: 10px;">AWS</p>
+                      <v-text-field style="width: 100%;"
+                                    id="MCloudP"
+                                    v-model="MCloudP"
+                                    readonly
+                                    outlined></v-text-field>
                     </v-row>
                     <v-row>
                       <p style="text-decoration: underline;">Access Key Id</p>
-                      <p style="padding-left: 10px;">AKIAJSIE27KKMHXI3BJQ</p>
+                      <v-text-field style="width: 100%;"
+                                    id="AccessKey"
+                                    v-model="AccessKey"
+                                    readonly
+                                    outlined></v-text-field>
                     </v-row>
                   </v-container>
                 </v-col>
@@ -83,12 +97,18 @@
 </template>
 
 <script>
+import {REGIONS} from "./globals/regions";
+
 export default {
   name: "MachineSumUpContent",
 
   data() {
     return {
-      MName: sessionStorage?.getItem("MName")
+      MName: sessionStorage?.getItem("MName"),
+      MRegion: REGIONS[sessionStorage?.getItem("MRegion")],
+      MCloudP: sessionStorage?.getItem("CSP"),
+      AccessKey: sessionStorage?.getItem("AccessKey"),
+
     };
   }
 };

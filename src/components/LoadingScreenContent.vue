@@ -9,7 +9,7 @@
         style="font-size: xx-large; margin-bottom: 20px;"
         align="center"
       >
-        Loading...
+         <div id="storage"/>
       </div>
       <v-row>
         <v-col cols="12">
@@ -31,15 +31,19 @@
 </template>
 
 <script>
+
 export default {
   name: "LoadingScreenContent",
   mounted() {
     this.$nextTick(function() {
+      document.getElementById("storage").innerHTML = "Creating machine " + sessionStorage?.getItem("MName");
       setTimeout(() => {
         document.location.href = "/";
       }, 3000);
     });
-  }
+  },
+
+
 };
 </script>
 
